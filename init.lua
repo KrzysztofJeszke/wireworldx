@@ -7,10 +7,6 @@ minetest.register_node("wireworldx:conductor", {
 	inventory_image = "wireworldx_conductor.png",
 	wield_image = "wireworldx_conductor.png",
 	paramtype = "light",
-	walkable = false,
-	selection_box = {
-		type = "wallmounted"
-	},
 	groups = {dig_immediate=3},
 })
 minetest.register_node("wireworldx:lightbulb_off", {
@@ -18,10 +14,6 @@ minetest.register_node("wireworldx:lightbulb_off", {
 	tiles = {"wireworldx_lightbulb_off.png"},
 	inventory_image = "wireworldx_lightbulb_off.png",
 	wield_image = "wireworldx_lightbulb_off.png",
-	walkable = false,
-	selection_box = {
-		type = "wallmounted"
-	},
 	groups = {dig_immediate=3},
 })
 minetest.register_node("wireworldx:lightbulb_on", {
@@ -30,10 +22,6 @@ minetest.register_node("wireworldx:lightbulb_on", {
 	inventory_image = "wireworldx_lightbulb_on.png",
 	wield_image = "wireworldx_lightbulb_on.png",
 	paramtype = "light",
-	walkable = false,
-	selection_box = {
-		type = "wallmounted"
-	},
 	groups = {dig_immediate=3},
 })
 
@@ -43,10 +31,6 @@ minetest.register_node("wireworldx:electron_head", {
 	inventory_image = "wireworldx_electron_head.png",
 	wield_image = "wireworldx_electron_head.png",
 	paramtype = "light",
-	walkable = false,
-	selection_box = {
-		type = "wallmounted"
-	},
 	groups = {dig_immediate=3, electron=1},
 })
 
@@ -56,10 +40,6 @@ minetest.register_node("wireworldx:electron_tail", {
 	inventory_image = "wireworldx_electron_tail.png",
 	wield_image = "wireworldx_electron_tail.png",
 	paramtype = "light",
-	walkable = false,
-	selection_box = {
-		type = "wallmounted"
-	},
 	groups = {dig_immediate=3, electron=1},
 })
 
