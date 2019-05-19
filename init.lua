@@ -87,7 +87,45 @@ local function turn_conductor(pos, param2)
 			if minetest.env:get_node(p).name == "wireworldx:electron_head" then
 				if not marked(p) then
 					local param2 = minetest.env:get_node(p).param2
-					minetest.env:set_node(p, {name="wireworldx:electron_tail", param2=param2})
+					minetest.env:set_node(p, {name="wireworldx:lightbulb_off", param2=param2})
+					mark(p)
+				end
+			end
+		end
+		end
+		end
+	end
+end
+
+local function turn_conductor(pos, param2)
+	local count = 0
+	local minp = {x=pos.x-1, y=pos.y-1, z=pos.z-1}
+	local maxp = {x=pos.x+1, y=pos.y+1, z=pos.z+1}
+	for x=minp.x,maxp.x do
+	for y=minp.y,maxp.y do
+	for z=minp.z,maxp.z do
+		local p = {x=x, y=y, z=z}
+		if minetest.env:get_node(p).name == "wireworldx:electron_head" then
+			if not marked(p) then
+				count = count+1
+			end
+		end
+	end
+	end
+	end
+	
+	if count>0 and count<3 then
+		minetest.env:set_node(pos, {name="wireworldx:electron_head", param2=param2})
+		mark(pos)
+	elseif count>0 then
+		for x=minp.x,maxp.x do
+		for y=minp.y,maxp.y do
+		for z=minp.z,maxp.z do
+			local p = {x=x, y=y, z=z}
+			if minetest.env:get_node(p).name == "wireworldx:electron_head" then
+				if not marked(p) then
+					local param2 = minetest.env:get_node(p).param2
+					minetest.env:set_node(p, {name="wireworldx:lightbulb_on", param2=param2})
 					mark(p)
 				end
 			end
